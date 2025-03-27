@@ -1,20 +1,3 @@
-`include "Fetch_Cycle.v"
-`include "Decode_Cyle.v"
-`include "Execute_Cycle.v"
-`include "Memory_Cycle.v"
-`include "Writeback_Cycle.v"    
-`include "PC.v"
-`include "PC_Adder.v"
-`include "Mux.v"
-`include "Instruction_Memory.v"
-`include "Control_Unit_Top.v"
-`include "Register_File.v"
-`include "Sign_Extend.v"
-`include "ALU.v"
-`include "Data_Memory.v"
-`include "Hazard_unit.v"
-
-
 module Pipeline_top(clk, rst);
 
     // Declaration of I/O
