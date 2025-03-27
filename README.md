@@ -17,25 +17,26 @@ Write Back (WB)
 
 ## 📌 Supported Instruction Types
 
-### ✅R-Type Instructions
+✅ R-Type Instructions
 
-### ✅I-Type Instructions
+✅ I-Type Instructions
 
-### ✅S-Type Instructions
+✅ S-Type Instructions
 
-### ✅B-Type Instructions
+✅ B-Type Instructions
 
-### Arithmetic and Logical Operations Supported
+## 📌 Arithmetic and Logical Operations Supported
 
 
+✅ Addition (ADD)
 
-Hazard detection and data forwarding included.
+✅ Subtraction (SUB)
 
-Supports ALU operations, memory load/store, and register operations.
+✅ Bitwise AND (AND)
 
-No branch prediction mechanism.
+✅ Bitwise OR (OR)
 
-No jump instructions (JAL, JALR not supported)
+✅ Set Less Than (SLT)
 
 ## Pipeline Stages
  
@@ -61,19 +62,18 @@ Writes results back to the register file if needed.
 ## Hazard Handling
 
 Data Hazards: Managed through data forwarding from EX/MEM and MEM/WB stages.
+
 Control Hazards: Since there is no branch prediction, control hazards are handled by stalling or flushing the pipeline.
 
 ## Future Enhancements
 
 Implement branch prediction to reduce control hazards.
+
 Add jump instructions (JAL, JALR) support.
+
 Extend to support more RISC-V instructions.
 
 
-
-License
-
-This project is open-source and licensed under the MIT License.
 
 
 
