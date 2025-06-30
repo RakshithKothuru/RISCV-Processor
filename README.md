@@ -23,7 +23,6 @@ Write Back (WB)
 
 ✅ S-Type Instructions
 
-✅ B-Type Instructions
 
 ## 📌 Arithmetic and Logical Operations Supported
 
