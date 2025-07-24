@@ -62,8 +62,6 @@ Writes results back to the register file if needed.
 
 Data Hazards: Managed through data forwarding from EX/MEM and MEM/WB stages.
 
-Control Hazards: Since there is no branch prediction, control hazards are handled by stalling or flushing the pipeline.
-
 ## Future Enhancements
 
 Implement branch prediction to reduce control hazards.
