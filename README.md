@@ -1,76 +1,95 @@
-# 5-Stage Pipelined RISC-V Processor
+# 🚀 5-Stage Pipelined RISC-V Processor
 
 ## 📌 Project Overview
 
-This repository contains the implementation of a 5-stage pipelined RISC-V processor. The design follows the classic five pipeline stages:
+This repository contains the RTL design and simulation of a 5-stage pipelined 32-bit RISC-V processor. The processor supports a subset of the RV32I instruction set and follows the classic pipeline architecture with the following stages:
 
-Instruction Fetch (IF)
-Instruction Decode (ID)
-Execute (EX)
-Memory Access (MEM)
-Write Back (WB)
+- **Instruction Fetch (IF)**
+- **Instruction Decode (ID)**
+- **Execute (EX)**
+- **Memory Access (MEM)**
+- **Write Back (WB)**
 
-## 📌 Technologies Used
-✅ Designed using **Verilog HDL**  
-✅ Simulated using **Icarus Verilog (iverilog) & GTKWave**  
-✅ Developed in **VS Code** 
+The design includes basic hazard handling through data forwarding, enabling improved performance by avoiding unnecessary stalls.
 
-## 📌 Supported Instruction Types
+---
 
-✅ R-Type Instructions
+## 🛠️ Technologies Used
 
-✅ I-Type Instructions
+- ✅ Verilog HDL
+- ✅ Icarus Verilog (for simulation)
+- ✅ GTKWave (for waveform visualization)
+- ✅ VS Code (for development)
 
-✅ S-Type Instructions
+---
 
+## 🧮 Supported Instruction Types
 
-## 📌 Arithmetic and Logical Operations Supported
+- ✅ **R-Type** 
+- ✅ **I-Type** 
+- ✅ **S-Type**
 
+---
 
-✅ Addition (ADD)
+## 🧠 Arithmetic and Logical Operations Supported
 
-✅ Subtraction (SUB)
+- ✅ **Addition** (`ADD`)
+- ✅ **Subtraction** (`SUB`)
+- ✅ **Bitwise AND** (`AND`)
+- ✅ **Bitwise OR** (`OR`)
+- ✅ **Set Less Than** (`SLT`)
 
-✅ Bitwise AND (AND)
+---
 
-✅ Bitwise OR (OR)
+## 📦 Pipeline Stage Details
 
-✅ Set Less Than (SLT)
+### 🟦 Instruction Fetch (IF)
+- Fetches instructions from memory using the Program Counter (PC).
+- PC increments sequentially (no control flow instructions yet).
 
-## Pipeline Stages
- 
-1. Instruction Fetch (IF)
-Fetches instructions from memory using the Program Counter (PC).
-The PC increments sequentially as there is no branch/jump handling.
+### 🟩 Instruction Decode (ID)
+- Decodes instruction opcode and fields.
+- Reads operands from the register file.
+- Generates control signals for later stages.
 
-2. Instruction Decode (ID)
-Decodes the fetched instruction.
-Reads source registers and generates control signals.
+### 🟨 Execute (EX)
+- ALU performs arithmetic, logical, and address computations.
+- Implements **data forwarding** to resolve Read After Write (RAW) hazards.
 
-3. Execute (EX)
-Performs ALU computations for arithmetic, logical, and memory address calculations.
-Handles forwarding to resolve data hazards.
+### 🟧 Memory Access (MEM)
+- Performs memory reads and writes (load/store).
+- Uses simple synchronous memory interface.
 
-4. Memory Access (MEM)
-Handles load and store operations.
-Uses a simple synchronous memory interface.
+### 🟥 Write Back (WB)
+- Writes the result back to the destination register if applicable.
 
-5. Write Back (WB)
-Writes results back to the register file if needed.
+---
 
-## Hazard Handling
+## ⚠️ Hazard Handling
 
-Data Hazards: Managed through data forwarding from EX/MEM and MEM/WB stages.
+- ✅ **Data Hazards**: Handled using forwarding logic from EX/MEM and MEM/WB pipeline stages to eliminate stalls.
+- ❌ **Control Hazards**: Not handled in the current version (no branches or jumps yet).
 
-## Future Enhancements
+---
 
-Implement branch prediction to reduce control hazards.
+## 🚀 Future Enhancements
 
-Add jump instructions (JAL, JALR) support.
+- ⏩ Add **branch and jump instruction** support (`BEQ`, `JAL`, `JALR`)
+- 📈 Implement **branch prediction** to reduce control hazards
+- 🔧 Expand support for more **RV32I** instructions
 
-Extend to support more RISC-V instructions.
+---
 
+## 📄 License
 
+This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
 
+---
 
+## 🔗 References
 
+- Patterson, D. A., & Hennessy, J. L. (2017). *Computer Organization and Design RISC-V Edition: The Hardware Software Interface*. Morgan Kaufmann.
+- [RISC-V ISA Manual (Volume I: User-Level ISA)](https://riscv.org/technical/specifications/)
+- [Icarus Verilog](http://iverilog.icarus.com/)
+- [GTKWave](http://gtkwave.sourceforge.net/)
+- [RISC-V Wikipedia](https://en.wikipedia.org/wiki/RISC-V)
