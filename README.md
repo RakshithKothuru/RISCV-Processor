@@ -90,6 +90,4 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE) 
 
 - Patterson, D. A., & Hennessy, J. L. (2017). *Computer Organization and Design RISC-V Edition: The Hardware Software Interface*. Morgan Kaufmann.
 - [RISC-V ISA Manual (Volume I: User-Level ISA)](https://riscv.org/technical/specifications/)
-- [Icarus Verilog](http://iverilog.icarus.com/)
-- [GTKWave](http://gtkwave.sourceforge.net/)
 - [RISC-V Wikipedia](https://en.wikipedia.org/wiki/RISC-V)
