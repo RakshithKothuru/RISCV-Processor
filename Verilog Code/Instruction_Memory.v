@@ -6,7 +6,9 @@ module Instruction_Memory(rst,A,RD);
 
   reg [31:0] mem [1023:0];
   
-  assign RD = (rst == 1'b0) ? {32{1'b0}} : mem[A[31:2]];
+  assign RD = (rst == 1'b0) ? {32{1'b0}} : mem[A[31:2]]; // each instruction is 4 bytes and each address bus bit points to 1 byte of instruction because 1 byte is the smallest(char).
+  // since in our architecture we written PC=PC+4; this refers to byte addressable architecture ie each bit in address bus points to a byte of data in memory.
+  // for word addressable architecture just write PC=PC+1; and assign RD=mem[A];
 
   initial begin
     $readmemh("memfile.hex",mem);
